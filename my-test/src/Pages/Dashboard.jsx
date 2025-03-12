@@ -1,10 +1,12 @@
 import React,{useState} from 'react';
-import UserCard from '../src/Components/UserCard.jsx';
+import UserCard from '../components/userCard';
             function Dashboard() {
                 const [users, setUsers] = useState([
                   { name: 'John', email: 'john555@.com', age: 25 },
                   { name: 'Jane', email: 'jane123@.com', age: 30 },
-                  { name: 'Alice', email: 'alice342@.com', age: 28 }
+                  { name: 'Alice', email: 'alice342@.com', age: 28 },
+                    { name: 'Bob', email: 'bob678@.com', age: 35 },
+                    { name: 'Eve', email: 'eve999@.com', age: 32 },
                 ]);
               
                 return (

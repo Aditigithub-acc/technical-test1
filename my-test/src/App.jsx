@@ -1,18 +1,43 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Homepg from '../src/Pages/Homepg.jsx';
-import Dashboard from '../src/Pages/Dashboard.jsx';
-import nav from '../src/Components/Nav.jsx';
+import { createBrowserRouter , RouterProvider} from "react-router-dom";
+// import Homepg from './src/Pages/Homepg.jsx';
+// import Dashboard from './src/Pages/Dashboard.jsx';
+// import Nav from './src/Components/Nav.jsx';
+import Homepg from './pages/homepg.jsx';
+import Dashboard from './pages/dashboard.jsx';
+import Nav from './components/nav.jsx';
+
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      // element: <>
+      // <Nav/> <Homepg />
+      // </>
+      element:(
+        <div>
+          <Nav/>
+          <Homepg/>
+        </div>
+      )
+    },
+
+    {
+      path: '/dashboard',
+      element:(
+        <div>
+          <Nav/>
+          <Dashboard/>
+        </div>
+      )
+    }
+  ]);
   return (
-    <Router>
-      <nav />
-      <Routes>
-        <Route path="/" element={<Homepg />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
+    <div>
+      <RouterProvider router={router}/>
+
+    </div>
   )
 }
 
