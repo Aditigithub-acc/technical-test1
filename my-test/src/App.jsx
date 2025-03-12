@@ -1,10 +1,18 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Homepg from '../src/Pages/Homepg.jsx';
+import Dashboard from '../src/Pages/Dashboard.jsx';
+import nav from '../src/Components/Nav.jsx';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      
-    </div>
+    <Router>
+      <nav />
+      <Routes>
+        <Route path="/" element={<Homepg />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   )
 }
 
